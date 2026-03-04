@@ -8,8 +8,8 @@ namespace WinFormsApp1
 {
     public class Aluno
     {
-        public int id { get; set; }
         public string nome { get; set; }
+        public int id { get; set; }
         public string RM { get; }
 
     }
