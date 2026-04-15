@@ -12,8 +12,8 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace Fiap.banco.api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260408015009_CriarTabelas")]
-    partial class CriarTabelas
+    [Migration("20260415011700_AdicionarTabelaAgencias")]
+    partial class AdicionarTabelaAgencias
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,27 @@ namespace Fiap.banco.api.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             OracleModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Fiap.banco.api.Model.Agencia", b =>
+                {
+                    b.Property<int>("idAgencia")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("idAgencia"));
+
+                    b.Property<string>("dsEndereco")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("nmAgencia")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.HasKey("idAgencia");
+
+                    b.ToTable("Agencias");
+                });
 
             modelBuilder.Entity("Fiap.banco.api.Model.Banco", b =>
                 {

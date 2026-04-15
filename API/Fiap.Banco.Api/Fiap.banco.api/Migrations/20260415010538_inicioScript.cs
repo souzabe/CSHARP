@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Fiap.banco.api.Migrations
 {
     /// <inheritdoc />
-    public partial class CriarTabelas : Migration
+    public partial class inicioScript : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

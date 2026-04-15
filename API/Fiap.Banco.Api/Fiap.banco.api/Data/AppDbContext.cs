@@ -2,8 +2,9 @@
 
 {
 using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Infrastructure;
 
-public class AppDbContext: DbContext
+    public class AppDbContext: DbContext
     {
         public AppDbContext(DbContextOptions options) : base(options) { }
         
@@ -12,5 +13,7 @@ public class AppDbContext: DbContext
         public DbSet<Model.Cliente> Clientes { get; set; }
         
         public DbSet<Model.Funcionario> Funcionarios { get; set; }
+        
+        public DbSet<Model.Agencia> Agencias { get; set; }
     }
 }
